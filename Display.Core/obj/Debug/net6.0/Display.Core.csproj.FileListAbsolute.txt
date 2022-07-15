@@ -1,0 +1,12 @@
+/Users/mvcprogrammer/src/Displays/Display.Core/bin/Debug/net6.0/Display.Core.deps.json
+/Users/mvcprogrammer/src/Displays/Display.Core/bin/Debug/net6.0/Display.Core.dll
+/Users/mvcprogrammer/src/Displays/Display.Core/bin/Debug/net6.0/Display.Core.pdb
+/Users/mvcprogrammer/src/Displays/Display.Core/obj/Debug/net6.0/Display.Core.csproj.AssemblyReference.cache
+/Users/mvcprogrammer/src/Displays/Display.Core/obj/Debug/net6.0/Display.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mvcprogrammer/src/Displays/Display.Core/obj/Debug/net6.0/Display.Core.AssemblyInfoInputs.cache
+/Users/mvcprogrammer/src/Displays/Display.Core/obj/Debug/net6.0/Display.Core.AssemblyInfo.cs
+/Users/mvcprogrammer/src/Displays/Display.Core/obj/Debug/net6.0/Display.Core.csproj.CoreCompileInputs.cache
+/Users/mvcprogrammer/src/Displays/Display.Core/obj/Debug/net6.0/Display.Core.dll
+/Users/mvcprogrammer/src/Displays/Display.Core/obj/Debug/net6.0/refint/Display.Core.dll
+/Users/mvcprogrammer/src/Displays/Display.Core/obj/Debug/net6.0/Display.Core.pdb
+/Users/mvcprogrammer/src/Displays/Display.Core/obj/Debug/net6.0/ref/Display.Core.dll
