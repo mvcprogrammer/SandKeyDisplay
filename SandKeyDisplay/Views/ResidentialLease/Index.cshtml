@@ -1,0 +1,48 @@
+@using Display.Core.Services.Bridge.Stellar.Enums;
+@model List<SandKeyDisplay.ViewModels.ListingViewModel>
+
+<div class="property_container">
+    @foreach (var item in Model)
+    {
+        var photoLocation = "Photo not available.";
+
+        if (item.Media?.Count > 0)
+        {
+            photoLocation = item.Media.Select(x => x.MediaUrl).FirstOrDefault()?.ToString() ?? "Photo not available";
+        }
+
+        var strBed = item.BedroomsTotal > 1 ? "Bed" : "Beds";
+        var strBath = item.BathroomsFull > 1 ? "Bath" : "Baths";
+
+        <div class="property_listing">
+            <div id="@item.ListingKey" class="residential_listing_data">
+                <div class="property_listing_data_header">
+                    <div class="property_listing_data_header_place_price_container">
+                        <div class="property_listing_data_header_place">Clearwater Beach</div>
+                        <div class="property_listing_data_header_price">@item.GetLeasePrice</div>
+                    </div>
+                    <div class="property_listing_data_header_address">@item.SubdivisionName</div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="property_listing_data_details">
+                    <div class="property_listing_data_details_photos"><img width="160" height="120" src="@photoLocation" alt="@photoLocation"/></div>
+                    <div class="clear:both;"></div>
+                    <div class="property_listing_data_details_info">@item.PropertyType</div>
+                    <div class="property_listing_data_details_bed_bath">@item.BedroomsTotal&nbsp;@strBed | @item.BathroomsFull&nbsp;Full @strBath</div>
+                    <div class="property_listing_data_details_SF">Living Area:&nbsp;@item.LivingArea Sq. Ft.</div>
+                    <div class="property_listing_data_details_county">Pinellas</div>
+                    <div class="property_listing_data_details_mls_id">@item.PropertySubType</div>
+                </div>
+                <div class="property_listing_data_touch_here">Touch for more information.</div>
+            </div>
+        </div>
+    }
+    <div class="clear:both;"></div>
+</div>
+<div class="Navigation_Container">
+    <div class="Navigate_Prev"><a href="/Rental/@ViewBag.SortDirection/@(ViewBag.Skip -1)/@ViewBag.CondoId"><img src="/Images/Prev.png" alt="Navigate Previous" /></a></div>
+    <div class="Navigate_Home"><a href="/"><img src="/Images/Home.png" alt="Navigate Home" /></a></div>
+    <div class="Navigate_Next"><a href="/Rental/@ViewBag.SortDirection/@(ViewBag.Skip +1)/@ViewBag.CondoId"><img src="/Images/Next.png" alt="Navigate Next" /></a></div>
+    <div class="Navigate_SortHighToLow"><a href="/Rental/@((int)ParamEnums.SortDirection.Descending)/0/@ViewBag.CondoId"><img src="/Images/SortHighToLow.png" alt="Sort Descending" /></a></div>
+    <div class="Navigate_SortLowToHigh"><a href="/Rental/@((int)ParamEnums.SortDirection.Ascending)/0/@ViewBag.CondoId"><img src="/Images/SortLowToHigh.png" alt="Sort Ascending" /></a></div>
+</div>

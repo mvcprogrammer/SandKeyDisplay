@@ -1,0 +1,14 @@
+@{
+    string condoName = ViewBag.condoName;
+    condoName = condoName.Replace('_', ' ');
+}
+
+
+<div style="height:1078px;width:1920px;">
+    <div class="condoHeader" style="padding:50px;width:950px;margin:auto;font-family:Arial,sans-serif;font-size:24px;text-align:center;">
+        <div style="padding:10px 15px;width:1000px;margin:auto;background-color:transparent;font-size:48px;font-weight:bold;color:#FFFFFF;">@condoName</div>
+        <div id="RES~@condoName" class="class_residential_selector" style="background-color:transparent;padding:45px 15px;width:390px;height:45px;margin:55px 5px;float:left;background-image:url('../wwwroot/Images/SalesInformation.png');">&nbsp;</div>
+        <div id="RNT~@condoName" class="class_rental_selector" style="background-color:transparent;padding:45px 15px;width:390px;height:45px;margin:55px 5px;float:right;background-image:url('../wwwroot/Images/RentalInformation.png');">&nbsp;</div>
+        <div id="id_nav_back" style="background-color:transparent;padding:35px 15px;width:390px;height:65px;margin:auto;clear:both;background-image:url('Images/GoBack.png');">&nbsp;</div>
+    </div>
+</div>

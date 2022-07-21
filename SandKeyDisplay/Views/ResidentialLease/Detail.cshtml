@@ -1,0 +1,190 @@
+@model SandKeyDisplay.ViewModels.ListingViewModel
+
+@{ViewBag.Title = "Property Details";}
+<div class="property-background" id="@Model.ListingKey">
+    <div class="property-background-layer-1">
+        <div class="property-background-layer-2">
+            <div class="property-photo" id="property-photo-main">
+                <img style="height:395px;" id="id_photo_holder" src="@Model.Media?.FirstOrDefault()?.MediaUrl" alt="" />
+            </div>
+            <div class="property-info-right">
+                <div class="property-address">@Model.SubdivisionName</div>
+                <div class="propery-info-nav">
+                    <div id="id_property_go_back" class="property-go-back"><span class="link-span" style="color:red;">Back</span></div>
+                    <div id="phone_thank_you" style="display:none; background-color:#FFFFFF;">
+                        <p style="padding:15px; font-size:20px;">Thank you, Someone will contact you about this property shortly.</p>
+                    </div>
+                    <div id="id_property_contact_phone" class="property-contact-phone"><span class="link-span">Contact Me by Phone</span></div>
+                    <div id="id_contact_numpad" class="contact-numpad" style="display:none;background-color:#b7b7b7;border-radius:15px; background-image:url('../Images/NumPad.gif'); background-repeat:no-repeat;">
+                        <div style="min-height:615px; min-width:600px; text-align:center; font-family:Arial; font-weight:bold; font-size:65px; line-height:0;">
+                            &nbsp;
+                            <div class="keypad-row-1" style="height:124px; width:600px; margin-top:15px;">
+                                &nbsp;
+                                <div id="num-1" class="num-key" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">1</div>
+                                <div id="num-2" class="num-key" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">2</div>
+                                <div id="num-3" class="num-key" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">3</div>
+                                <div id="num--" class="num-key" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">-</div>
+                            </div>
+                            <div class="keypad-row-2" style="height:124px; width:600px; margin-top:18px;">
+                                &nbsp;
+                                <div id="num-4" class="num-key" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">4</div>
+                                <div id="num-5" class="num-key" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">5</div>
+                                <div id="num-6" class="num-key" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">6</div>
+                                <div id="num-clr" class="num-command" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px; font-size:28px;">CLEAR</div>
+                            </div>
+                            <div class="keypad-row-3" style="height:124px; width:600px; margin-top:18px;">
+                                &nbsp;
+                                <div id="num-7" class="num-key" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">7</div>
+                                <div id="num-8" class="num-key" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">8</div>
+                                <div id="num-9" class="num-key" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">9</div>
+                                <div id="" style="float: left; margin-left: 15px; line-height: 123px; text-align: center; width: 130px;">&nbsp;</div>
+                            </div>
+                            <div class="keypad-row-4" style="height:145px; width:600px; margin-top:18px;">
+                                &nbsp;
+                                <div id="num-0" class="num-key" style="float: left; margin-left: 15px; line-height: 145px; text-align: center; width: 275px;">0</div>
+                                <div id="num-bks" class="num-command" style="float: left; margin-left: 15px; line-height: 145px; text-align: center; width: 130px; font-size:20px;">Backspace</div>
+                                <div id="" style="float: left; margin-left: 15px; line-height: 145px; text-align: center; width: 130px;">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div id="id_res_phone_info_center" style="text-align:center;margin-bottom:10px;">
+                            <input id="id_res_phone_input" value="" style="background-color:#2F2F2F; border:2px solid #AA9C79; border-radius:8px; color:#FF8503; font-size:31px; width:256px; padding:15px; margin:0; text-align:right;" />
+                            <button id="id_res_send_phone_contact_request" style="margin:0 0 0 5px; padding:5px; background-color: rgb(47, 47, 47); color: rgb(255, 133, 3); border: 2px solid #AA9C79; border-radius: 8px 8px 8px 8px; font-size: 36px;">SEND</button>
+                            <button id="num-cls" class="num-command" style="margin:0 0 0 5px; padding:5px; background-color: rgb(47, 47, 47); color: rgb(255, 133, 3); border: 2px solid #AA9C79; border-radius: 8px 8px 8px 8px; font-size: 36px;">CANCEL</button>
+                        </div>
+                    </div>
+                    <div id="email_thank_you" style="display:none; background-color:#FFFFFF;">
+                        <p style="padding:15px; font-size:20px;">Thank you, Your email with property details has been sent.</p>
+                    </div>
+                    <div id="id_show_keyboard" class="property-contact-email"><span class="link-span">Send Details by Email</span></div>
+                    <div id="id_contact_keyboard" class="contact-keyboard" style="display:none;background-color:#b7b7b7;padding:20px;border-radius:15px; background-image:url('../Images/Keyboard.gif'); background-repeat:no-repeat;">
+                        <div style="min-height:560px; min-width:1465px; text-align:center; font-family:Arial; font-weight:bold; font-size:28px; line-height:50px;">
+                            &nbsp;
+                            <div class="keyboard-row-1" style="min-height:25px; margin-top:0; min-height:82px;">
+                                &nbsp;
+                                <div id="ESC" class="keyboard-command" style="float:left; min-height:82px; margin-left:27px; width:83px;">ESC</div>
+                                <div id="1" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">1</div>
+                                <div id="2" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">2</div>
+                                <div id="3" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">3</div>
+                                <div id="4" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">4</div>
+                                <div id="5" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">5</div>
+                                <div id="6" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">6</div>
+                                <div id="7" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">7</div>
+                                <div id="8" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">8</div>
+                                <div id="9" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">9</div>
+                                <div id="0" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">0</div>
+                                <div class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">&nbsp;</div>
+                                <div class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">&nbsp;</div>
+                                <div id="CLR" class="keyboard-command" style="float:left; min-height:82px; margin-left:13px; width:133px;">Clear</div>
+                            </div>
+                            <div class="keyboard-row-2" style="min-height:25px; margin-top:9px; min-height:82px;">
+                                &nbsp;
+                                <div id="DLT" class="keyboard-command" style="float:left; min-height:82px; margin-left:27px; width:131px;">Delete</div>
+                                <div id="q" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">Q</div>
+                                <div id="w" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">W</div>
+                                <div id="e" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">E</div>
+                                <div id="r" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">R</div>
+                                <div id="t" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">T</div>
+                                <div id="y" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">Y</div>
+                                <div id="u" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">U</div>
+                                <div id="i" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">I</div>
+                                <div id="o" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">O</div>
+                                <div id="p" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">P</div>
+                                <div id="" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">&nbsp;</div>
+                                <div id="" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">&nbsp;</div>
+                                <div id="" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:85px;">&nbsp;</div>
+                            </div>
+                            <div class="keyboard-row-3" style="min-height:25px; margin-top:12px; min-height:82px;">
+                                &nbsp;
+                                <div id="BKS" class="keyboard-command" style="float:left; min-height:82px; margin-left:27px; width:155px;">Backspace</div>
+                                <div id="a" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">A</div>
+                                <div id="s" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">S</div>
+                                <div id="d" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">D</div>
+                                <div id="f" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">F</div>
+                                <div id="g" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">G</div>
+                                <div id="h" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">H</div>
+                                <div id="j" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">J</div>
+                                <div id="k" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">K</div>
+                                <div id="l" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">L</div>
+                                <div id="" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">&nbsp;</div>
+                                <div id="" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">&nbsp;</div>
+                                <div id="SEND" class="keyboard-command" style="float:left; min-height:82px; margin-left:13px; width:158px;">SEND</div>
+                            </div>
+                            <div class="keyboard-row-4" style="min-height:25px; margin-top:12px; min-height:82px;">
+                                &nbsp;
+                                <div id="SHL" class="keyboard-command" style="float:left; min-height:82px; margin-left:27px; width:204px;">Shift</div>
+                                <div id="z" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">Z</div>
+                                <div id="x" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">X</div>
+                                <div id="c" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">C</div>
+                                <div id="v" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">V</div>
+                                <div id="b" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">B</div>
+                                <div id="n" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">N</div>
+                                <div id="m" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">M</div>
+                                <div id="" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:84px;">&nbsp;</div>
+                                <div id="." class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">.</div>
+                                <div id="" class="keyboard-key" style="float:left; min-height:82px; margin-left:13px; width:83px;">&nbsp;</div>
+                                <div id="SHR" class="keyboard-command" style="float:left; min-height:82px; margin-left:13px; width:207px;">Shift</div>
+                            </div>
+                            <div class="keyboard-row-5" style="min-height:25px; margin-top:12px; min-height:95px;">
+                                &nbsp;
+                                <div id="AT" class="keyboard-command" style="float:left; min-height:94px; margin-left:27px; width:131px;">@@</div>
+                                <div id="_" class="keyboard-key" style="float:left; min-height:94px; margin-left:13px; width:108px;">_</div>
+                                <div id="-" class="keyboard-key" style="float:left; min-height:94px; margin-left:13px; width:131px;">-</div>
+                                <div id="" class="keyboard-key" style="float:left; min-height:94px; margin-left:13px; width:566px;">&nbsp;</div>
+                                <div id=".com" class="keyboard-key" style="float:left; min-height:94px; margin-left:13px; width:132px;">.COM</div>
+                                <div id=".net" class="keyboard-key" style="float:left; min-height:94px; margin-left:13px; width:108px;">.NET</div>
+                                <div id=".org" class="keyboard-key" style="float:left; min-height:94px; margin-left:13px; width:132px;">.ORG</div>
+                            </div>
+                        </div>
+                        <div id="id_info_center" style="text-align:center;">
+                            <input id="id_mls_num" type="hidden" value="@Model.ListingKey" />
+                            <input id="id_email_input" value="" style="background-color:#2F2F2F; border:2px solid #AA9C79; border-radius:8px; color:#FF8503; font-size:40px; min-width:800px; text-align:center;" /><button id="id_send_email_res_details" style="background-color: rgb(47, 47, 47); color: rgb(255, 133, 3); border: 2px solid #AA9C79; border-radius: 8px 8px 8px 8px; font-size: 36px; margin-left: 50px;">SEND</button><button class="keyboard-command" id="CLS" style="background-color: rgb(47, 47, 47); color: rgb(255, 133, 3); border: 2px solid #AA9C79; border-radius: 8px 8px 8px 8px; font-size: 36px; margin-left: 15px;">CANCEL</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="waterfront-information">
+                    <div class="waterfront-information-header">Waterfront Information</div>
+                    <div class="waterfront-information-details">
+                        <div class="waterfront-info-left-col">Type:</div><div class="waterfront-info-right-col">&nbsp;@string.Join(",", Model.WaterfrontFeatures)</div>
+                    </div>
+                </div>
+                <div class="property-information">
+                    <div class="property-information-header">Property Information</div>
+                    <div class="property-information-details">
+                        <div class="property-info-left-col">Type:</div><div class="property-info-right-col">&nbsp;@Model.PropertySubType</div>
+                        <div class="property-info-left-col">Bedrooms:</div><div class="property-info-right-col">&nbsp;@Model.BedroomsTotal</div>
+                        <div class="property-info-left-col">Bathrooms:</div><div class="property-info-right-col">&nbsp;@Model.BathroomsFull Full, @Model.BathroomsHalf Half</div>
+                        <div class="property-info-left-col">Year Built:</div><div class="property-info-right-col">&nbsp;@Model.YearBuilt</div>
+                        <div class="property-info-left-col">Living Area:</div><div class="property-info-right-col">&nbsp;@Model.GetLivingArea Sq. Ft.</div>
+                        <div class="property-info-left-col">Price:</div><div class="property-info-right-col">&nbsp;@($"{Model.GetListPrice}")</div>
+                    </div>
+                </div>
+            </div>
+            <div class="property-features">
+                <div class="property-features-header">Features</div>
+                @{}
+                <div class="property-features-left-col">Community:</div><div class="property-features-right-col">&nbsp;@string.Join(", ", Model.CommunityFeatures)</div>
+                <div class="property-features-left-col">Exterior:</div><div class="property-features-right-col">&nbsp;@string.Join(", ", Model.ExteriorFeatures)</div>
+                <div class="property-features-left-col">Pool:</div><div class="property-features-right-col">&nbsp;@string.Join(", ", Model.PoolFeatures)</div>
+                <div class="property-features-left-col">Garage:</div><div class="property-features-right-col">&nbsp;@Model.GetHasGarage</div>
+                <div class="property-features-left-col">Interior:</div><div class="property-features-right-col">&nbsp;@string.Join(", ", Model.InteriorFeatures)</div>
+                <div class="property-features-left-col">Pets:</div><div class="property-features-right-col">&nbsp;@string.Join(", ", Model.PetsAllowed)</div>
+            </div>
+            <div style="clear:left;"></div>
+            <div class="property-photo-area-small">
+                @{
+                    for (int nCurPhoto = 0; nCurPhoto < Model.Media?.Count; nCurPhoto++)
+                    {
+                        <div><img class="property-photo-small" id="@Model.Media?[nCurPhoto].MediaUrl" style="border:1px solid #FFFFFF;" src="@Model.Media?[nCurPhoto].MediaUrl" alt="Loading..." width="110" /></div>
+                        if (nCurPhoto == 9)
+                        {
+                            break;
+                        }
+                    }
+                }
+            </div>
+            <div style="clear:both;"></div>
+            <div class="public-remarks">@Model.PublicRemarks</div>
+            <div class="reprocity">IDX information provided by MFRMLS&reg; and is provided for personal non-commercial use. Data last refreshed on @Model.LastModification Listing details provided by @Model.ListOfficeName</div>
+        </div>
+    </div>
+</div>
