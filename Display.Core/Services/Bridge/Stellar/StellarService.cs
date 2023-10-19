@@ -21,7 +21,9 @@ public static class StellarService
             condoId: condoId, 
             listingType:listingType);
 
+        Console.WriteLine(stellarListingsRouteData.Uri);
         var stellarListingResponse = await StellarClient.GetAsync(stellarListingsRouteData.Uri);
+        
 
         if (stellarListingResponse == null)
             throw new Exception("Failure getting Stellar Listings Data.");
