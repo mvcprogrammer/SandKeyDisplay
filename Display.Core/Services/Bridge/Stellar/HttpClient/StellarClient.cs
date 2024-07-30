@@ -8,13 +8,11 @@ public static class StellarClient
     {
         try
         {
-            using var client = new System.Net.Http.HttpClient
-            {
-                Timeout = TimeSpan.FromSeconds(3),
-                BaseAddress = new Uri("https://api.bridgedataoutput.com/api/")
-            };
-            
-            var response = await client.GetAsync(uri);
+            using var client = new System.Net.Http.HttpClient();
+            client.Timeout = TimeSpan.FromSeconds(3);
+            client.BaseAddress = new Uri("https://api.bridgedataoutput.com/api/");
+
+            using var response = await client.GetAsync(uri);
             response.EnsureSuccessStatusCode();
             
             var json = await response.Content.ReadAsStringAsync();

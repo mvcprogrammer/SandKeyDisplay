@@ -27,7 +27,6 @@ public class ResidentialController : Controller
         ViewBag.SortDirection = (int)ParamEnums.SortDirection.Descending;
         ViewBag.Skip = 0;
         ViewBag.CondoId = 0;
-        
         return View(listings);
     }
     

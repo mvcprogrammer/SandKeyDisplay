@@ -12,7 +12,7 @@ public static class PhotoClient
                 BaseAddress = new Uri("https://dvvjkgh94f2v6.cloudfront.net")
             };
             
-            var response = await client.GetAsync(uri);
+            using var response = await client.GetAsync(uri);
             response.EnsureSuccessStatusCode();
 
             var result = await response.Content.ReadAsByteArrayAsync();
